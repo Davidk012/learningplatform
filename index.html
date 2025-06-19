@@ -3,27 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vitus Tech - Login</title>
+  <meta name="description" content="Login to Vitus Tech Learning Platform - Empower your learning journey with our tools and resources." />
+  <title>Vitus Tech Learning Platform - Login</title>
+  
+  <!-- Preload CSS for better performance -->
+  <link rel="preload" href="styles.css" as="style" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>Vitus Tech Learning Platform</h1>
   </header>
+  
   <main>
-    <form id="loginForm" aria-label="Login form">
+    <form id="loginForm" aria-label="Login form" novalidate>
       <h2 class="section-title">Login</h2>
-      <div id="loginError" class="error-message" style="display:none;"></div>
+      
+      <!-- Error message with ARIA attributes -->
+      <div id="loginError" class="error-message hidden" role="alert" aria-live="assertive"></div>
+      
+      <!-- Email field with client-side validation -->
       <label for="loginEmail">Email</label>
-      <input type="email" id="loginEmail" name="loginEmail" placeholder="you@example.com" required autocomplete="username" />
+      <input 
+        type="email" 
+        id="loginEmail" 
+        name="loginEmail" 
+        placeholder="you@example.com" 
+        required 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+        title="Please enter a valid email address" 
+        autocomplete="username" 
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" class="input-hint">Enter your registered email address</div>
+      
+      <!-- Password field with visibility toggle -->
       <label for="loginPassword">Password</label>
-      <input type="password" id="loginPassword" name="loginPassword" placeholder="••••••••" required autocomplete="current-password" />
-      <button type="submit">Log In</button>
-      <p style="text-align:center; margin-top:1rem;">
+      <div class="password-container">
+        <input 
+          type="password" 
+          id="loginPassword" 
+          name="loginPassword" 
+          placeholder="••••••••" 
+          required 
+          minlength="8"
+          autocomplete="current-password" 
+          aria-describedby="passwordHelp"
+        />
+        <button 
+          type="button" 
+          id="togglePassword" 
+          class="password-toggle"
+          aria-label="Show password"
+          aria-pressed="false"
+        >
+          👁️
+        </button>
+      </div>
+      <div id="passwordHelp" class="input-hint">Must be at least 8 characters</div>
+      
+      <!-- Submit button with accessible label -->
+      <button type="submit" aria-label="Submit login form">Log In</button>
+      
+      <!-- Registration link with proper styling -->
+      <p class="center-text">
         Don't have an account? <a href="register.html" class="toggle-link">Register here</a>
       </p>
     </form>
   </main>
-  <script src="auth.js"></script>
+  
+  <!-- Defer script loading -->
+  <script src="auth.js" defer></script>
 </body>
 </html>
