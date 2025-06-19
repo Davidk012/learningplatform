@@ -1,0 +1,44 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "title": "Python Fundamentals",
+        "description": "Learn Python from scratch with hands-on exercises",
+        "tags": ["Python", "Programming", "Beginner"],
+        "duration": "4 weeks",
+        "level": "Beginner"
+      },
+      {
+        "id": 2,
+        "title": "Advanced JavaScript",
+        "description": "Master modern JavaScript features and frameworks",
+        "tags": ["JavaScript", "Web Development", "Intermediate"],
+        "duration": "6 weeks",
+        "level": "Intermediate"
+      },
+      {
+        "id": 3,
+        "title": "Data Science with Python",
+        "description": "Learn data analysis and visualization techniques",
+        "tags": ["Python", "Data Science", "Advanced"],
+        "duration": "8 weeks",
+        "level": "Advanced"
+      }
+    ],
+    "certifications": [
+      {
+        "id": 101,
+        "title": "AWS Certified Developer",
+        "description": "Validate cloud application development skills",
+        "tags": ["Cloud", "AWS", "DevOps"],
+        "exam": "Online proctored exam"
+      },
+      {
+        "id": 102,
+        "title": "Google Cloud Professional",
+        "description": "Demonstrate GCP implementation skills",
+        "tags": ["Cloud", "GCP", "Architecture"],
+        "exam": "Online proctored exam"
+      }
+    ]
+  }
