@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vitus Tech- Register</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Vitus Tech Learning Platform</h1>
+  </header>
+  <main>
+    <form id="registerForm" aria-label="Registration form">
+      <h2 class="section-title">Register</h2>
+      <div id="registerError" class="error-message" style="display:none;"></div>
+      <div id="registerSuccess" class="info-message" style="display:none;"></div>
+      <label for="regName">Full Name</label>
+      <input type="text" id="regName" name="regName" placeholder="Your full name" required autocomplete="name" />
+      <label for="regEmail">Email</label>
+      <input type="email" id="regEmail" name="regEmail" placeholder="you@example.com" required autocomplete="email" />
+      <label for="regPassword">Password</label>
+      <input type="password" id="regPassword" name="regPassword" placeholder="••••••••" minlength="6" required autocomplete="new-password" />
+      <label for="regPasswordConfirm">Confirm Password</label>
+      <input type="password" id="regPasswordConfirm" name="regPasswordConfirm" placeholder="••••••••" minlength="6" required autocomplete="new-password" />
+      <label>Interests (select all that apply)</label>
+      <div class="interests-container" role="group" aria-label="User interests">
+        <label class="interest-checkbox"><input type="checkbox" name="interests" value="Programming" /> Programming</label>
+        <label class="interest-checkbox"><input type="checkbox" name="interests" value="Python" /> Python</label>
+        <!-- Other interest checkboxes -->
+      </div>
+      <button type="submit">Register</button>
+      <p style="text-align:center; margin-top:1rem;">
+        Already have an account? <a href="index.html" class="toggle-link">Login here</a>
+      </p>
+    </form>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>
