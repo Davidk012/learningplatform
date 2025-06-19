@@ -21,35 +21,36 @@
     <h1>Vitus Tech Learning Platform</h1>
   </header>
   <main role="main">
-    <section class="dashboard" id="dashboard" aria-live="polite">
-      <nav class="dashboard-nav">
-        <button id="logoutBtn" aria-label="Log out">Log Out</button>
-      </nav>
-      <section>
-        <h2 class="section-title">Available Courses</h2>
-        <div class="grid courses-list" id="coursesList">
-          <div class="loading-placeholder">
-            <p>Loading courses...</p>
-            <div class="loading-spinner" aria-hidden="true"></div>
-          </div>
+    <!-- Update dashboard.html structure -->
+<section class="dashboard" id="dashboard" aria-live="polite">
+  <div class="main-content">
+    <section>
+      <h2 class="section-title">Available Courses</h2>
+      <div class="grid courses-list" id="coursesList">
+        <div class="loading-placeholder">
+          <p>Loading courses...</p>
+          <div class="loading-spinner" aria-hidden="true"></div>
         </div>
-      </section>
-      <section>
-        <h2 class="section-title">Available Certifications</h2>
-        <div class="grid certifications-list" id="certificationsList">
-          <div class="loading-placeholder">
-            <p>Loading certifications...</p>
-            <div class="loading-spinner" aria-hidden="true"></div>
-          </div>
-        </div>
-      </section>
-      <section class="recommendation-section" id="recommendationsSection">
-        <h2>Recommended For You</h2>
-        <div id="recommendedCourses"></div>
-        <div id="recommendedCertifications" class="recommended-certifications"></div>
-        <button class="btn-clear" id="clearSelectionBtn">Reset Recommendations</button>
-      </section>
+      </div>
     </section>
+    <section>
+      <h2 class="section-title">Available Certifications</h2>
+      <div class="grid certifications-list" id="certificationsList">
+        <div class="loading-placeholder">
+          <p>Loading certifications...</p>
+          <div class="loading-spinner" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <aside class="recommendation-section" id="recommendationsSection">
+    <h2>Recommended For You</h2>
+    <div id="recommendedCourses"></div>
+    <div id="recommendedCertifications" class="recommended-certifications"></div>
+    <button class="btn-clear" id="clearSelectionBtn">Reset Recommendations</button>
+  </aside>
+</section>
   </main>
   
   <!-- Error modal (hidden by default) -->
