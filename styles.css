@@ -273,8 +273,9 @@ select:focus {
   background-color: #fee2e2;
   color: #b91c1c;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 4px;
   margin-bottom: 1rem;
+  display: none;
 }
 
 .info-message {
@@ -363,4 +364,99 @@ a:focus {
   .dashboard-nav button {
     width: 100%;
   }
+}
+/* Add to styles.css */
+/* Dashboard Layout */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .dashboard {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Recommendation Section */
+.recommendation-section {
+  background: rgba(244, 63, 94, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.recommendation-section h2 {
+  color: var(--accent-color);
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.recommended-certifications {
+  margin-top: 1.5rem;
+}
+
+/* Card Enhancements */
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+.card.selected {
+  border: 2px solid var(--accent-color);
+  background: rgba(244, 63, 94, 0.03);
+}
+
+.card.selected::before {
+  content: '✓ Selected';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--accent-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Meta information */
+.meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Clear button */
+.btn-clear {
+  background: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  margin-top: 1.5rem;
+}
+
+.btn-clear:hover {
+  background: rgba(244, 63, 94, 0.1);
 }
