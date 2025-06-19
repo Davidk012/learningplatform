@@ -3,34 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="language" content="en" />
+  <meta name="description" content="Vitus Tech Learning Platform - Personalized dashboard for courses and certifications" />
+  <meta name="keywords" content="tech learning, programming courses, IT certifications, professional development" />
   <title>Vitus Tech - Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Vitus Tech Learning Platform" />
+  <meta property="og:description" content="Personalized tech learning dashboard with course recommendations" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vitus.tech/dashboard" />
+  <!-- Add og:image when you have a platform image -->
 </head>
 <body>
   <header>
     <h1>Vitus Tech Learning Platform</h1>
   </header>
-  <main>
+  <main role="main">
     <section class="dashboard" id="dashboard" aria-live="polite">
       <nav class="dashboard-nav">
         <button id="logoutBtn" aria-label="Log out">Log Out</button>
       </nav>
       <section>
         <h2 class="section-title">Available Courses</h2>
-        <div class="grid courses-list" id="coursesList"></div>
+        <div class="grid courses-list" id="coursesList">
+          <div class="loading-placeholder">
+            <p>Loading courses...</p>
+            <div class="loading-spinner" aria-hidden="true"></div>
+          </div>
+        </div>
       </section>
       <section>
         <h2 class="section-title">Available Certifications</h2>
-        <div class="grid certifications-list" id="certificationsList"></div>
+        <div class="grid certifications-list" id="certificationsList">
+          <div class="loading-placeholder">
+            <p>Loading certifications...</p>
+            <div class="loading-spinner" aria-hidden="true"></div>
+          </div>
+        </div>
       </section>
-      <section class="recommendation-section" id="recommendationsSection" style="display:none;">
-        <h3>Recommended For You</h3>
+      <section class="recommendation-section" id="recommendationsSection">
+        <h2>Recommended For You</h2>
         <div id="recommendedCourses"></div>
-        <div id="recommendedCertifications" style="margin-top:1rem;"></div>
-        <button class="btn-clear" id="clearSelectionBtn">Clear Selections & Start Over</button>
+        <div id="recommendedCertifications" class="recommended-certifications"></div>
+        <button class="btn-clear" id="clearSelectionBtn">Reset Recommendations</button>
       </section>
     </section>
   </main>
-  <script src="dashboard.js"></script>
+  
+  <!-- Error modal (hidden by default) -->
+  <div id="errorModal" class="modal hidden" role="alertdialog" aria-labelledby="errorModalTitle">
+    <div class="modal-content">
+      <h3 id="errorModalTitle">Error</h3>
+      <p id="errorMessage"></p>
+      <button id="closeErrorModal" class="btn-primary">Close</button>
+    </div>
+  </div>
+
+  <!-- Move script to end of body and add defer -->
+  <script src="dashboard.js" defer></script>
 </body>
 </html>
